@@ -33,9 +33,9 @@ window.addEventListener('DOMContentLoaded', function() {
         }
     });
 
-    // timer
+    // tabs
 
-    let deadline = '2021-01-13';
+    let deadline = '2021-02-13';
 
     function getTimeRemaining(endtime) {
         let t = Date.parse(endtime) - Date.parse(new Date()),
@@ -76,6 +76,26 @@ window.addEventListener('DOMContentLoaded', function() {
             } 
         }
     }
-
+// timer
     setClock('timer', deadline);
+
+    let more = document.querySelector('.more'),
+        overlay = document.querySelector('.overlay'),
+        close = document.querySelector('.popup-close');
+
+    more.addEventListener('click', function() {
+        overlay.style.display = 'block';
+        this.classList.add('more-splash');
+        document.body.style.overflow = 'hidden';
+    });
+    
+    close.addEventListener('click', function() {
+        overlay.style.display = 'none';
+        more.classList.remove('more-splash');
+        document.body.style.overflow = '';
+    });
+// Modal window timer
+
+    
+
 });
